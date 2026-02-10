@@ -1,0 +1,10 @@
+// ============================================
+// Common Components - Barrel Export
+// ============================================
+
+export { Button } from './Button';
+export { Card, CardHeader, CardContent, CardFooter } from './Card';
+export { Input } from './Input';
+export { Modal } from './Modal';
+export { IconButton } from './IconButton';
+export { TextArea } from './TextArea';

@@ -1,0 +1,143 @@
+/* ============================================
+   Project Timeline View Styles
+   ============================================ */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    height: 100%;
+    overflow: hidden;
+}
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-2) var(--space-4);
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.timelineScrollArea {
+    flex: 1;
+    overflow: auto;
+    position: relative;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-primary);
+}
+
+.timelineGrid {
+    position: relative;
+    min-height: 100%;
+}
+
+/* Header (Dates) */
+.timelineHeader {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--color-bg-tertiary);
+    border-bottom: 1px solid var(--color-border);
+    height: 40px;
+}
+
+.headerCell {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid var(--color-border-muted);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-secondary);
+}
+
+.todayHeader {
+    background: var(--color-accent-subtle);
+    color: var(--color-accent);
+    font-weight: var(--font-weight-bold);
+}
+
+/* Task Rows */
+.taskRow {
+    position: relative;
+    height: 40px;
+    border-bottom: 1px solid var(--color-border-muted);
+    transition: background var(--transition-fast);
+}
+
+.taskRow:hover {
+    background: var(--color-bg-hover);
+}
+
+/* Task Bars */
+.taskBar {
+    position: absolute;
+    top: 8px;
+    /* (40 - 24) / 2 */
+    height: 24px;
+    border-radius: var(--radius-sm);
+    background: var(--color-accent);
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0 var(--space-2);
+    overflow: hidden;
+    white-space: nowrap;
+    z-index: 5;
+    transition: transform var(--transition-fast);
+}
+
+.taskBar:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+    z-index: 6;
+}
+
+.taskBarTitle {
+    color: var(--color-text-inverse);
+    font-size: 11px;
+    font-weight: var(--font-weight-medium);
+}
+
+.taskBar.done {
+    background: var(--color-success);
+    opacity: 0.8;
+}
+
+.taskBar.overdue {
+    background: var(--color-error);
+}
+
+.taskBar.blocked {
+    background: var(--color-warning);
+}
+
+/* Today Line */
+.todayLine {
+    position: absolute;
+    top: 40px;
+    /* Below header */
+    bottom: 0;
+    width: 2px;
+    background: var(--color-accent);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Dependencies */
+.dependencyLine {
+    pointer-events: none;
+    z-index: 1;
+}

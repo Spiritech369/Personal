@@ -1,0 +1,126 @@
+/* ============================================
+   History Log Styles
+   ============================================ */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    height: 100%;
+    overflow: hidden;
+}
+
+.emptyState {
+    text-align: center;
+    color: var(--color-text-secondary);
+    padding: var(--space-8);
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px dashed var(--color-border);
+}
+
+.timeline {
+    position: relative;
+    padding-left: var(--space-6);
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 11px;
+    /* Center of 24px icon approx */
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-border);
+    z-index: 1;
+}
+
+.entryItem {
+    position: relative;
+    margin-bottom: var(--space-6);
+}
+
+.entryIcon {
+    position: absolute;
+    left: -24px;
+    width: 24px;
+    height: 24px;
+    border-radius: var(--radius-full);
+    background: var(--color-bg-primary);
+    border: 2px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    color: var(--color-text-secondary);
+    font-size: 12px;
+}
+
+.entryContent {
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-md);
+    padding: var(--space-3);
+    border: 1px solid var(--color-border);
+}
+
+.entryHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--space-2);
+}
+
+.entryTitle {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    font-size: var(--font-size-sm);
+}
+
+.entryTime {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+}
+
+.changesList {
+    margin-top: var(--space-2);
+    font-size: var(--font-size-xs);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.changeItem {
+    display: flex;
+    gap: var(--space-2);
+    color: var(--color-text-muted);
+}
+
+.fieldName {
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-secondary);
+}
+
+.oldValue {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.newValue {
+    color: var(--color-accent);
+}
+
+/* Specific Actions Colors */
+.create .entryIcon {
+    border-color: var(--color-success);
+    color: var(--color-success);
+}
+
+.update .entryIcon {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.delete .entryIcon {
+    border-color: var(--color-error);
+    color: var(--color-error);
+}

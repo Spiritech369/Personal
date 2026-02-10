@@ -1,0 +1,413 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    padding-bottom: var(--space-8);
+}
+
+.welcome {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: var(--space-2);
+}
+
+.welcomeTitle {
+    font-size: var(--font-size-3xl);
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+.accent {
+    background: linear-gradient(135deg, var(--color-brand-primary), var(--color-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.welcomeSubtitle {
+    color: var(--color-text-secondary);
+    margin: var(--space-2) 0 0 0;
+    font-size: var(--font-size-lg);
+}
+
+.dateDisplay {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--color-text-muted);
+    font-weight: var(--font-weight-medium);
+    background: var(--color-bg-secondary);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    border: 1px solid var(--color-border);
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-4);
+}
+
+/* Interactive Stats */
+.statCardWrapper {
+    cursor: pointer;
+    transition: transform var(--transition-fast);
+}
+
+.statCardWrapper:hover {
+    transform: translateY(-2px);
+}
+
+.activeStat .statCard {
+    border-color: var(--color-accent);
+    background: var(--color-accent-subtle);
+    box-shadow: var(--shadow-md);
+}
+
+.statCard {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    height: 100%;
+}
+
+.statIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-full);
+    background: var(--color-bg-tertiary);
+}
+
+.statInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.statValue {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: var(--space-1);
+}
+
+.statLabel {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+}
+
+/* Filtered List */
+.filteredListSection {
+    margin-top: var(--space-4);
+    animation: fadeIn var(--transition-normal);
+}
+
+.filterTitle {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+    color: var(--color-text-primary);
+}
+
+.taskList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.emptyMessage {
+    text-align: center;
+    color: var(--color-text-muted);
+    padding: var(--space-8);
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-md);
+    font-style: italic;
+}
+
+/* Two Column Layout */
+.twoColumn {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: var(--space-6);
+}
+
+.sectionCard {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sectionHeader {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.sectionHeader h2 {
+    margin: 0;
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+}
+
+.sectionCount {
+    background: var(--color-error);
+    color: white;
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: bold;
+}
+
+.urgentIcon {
+    color: var(--color-error);
+    animation: pulse 2s infinite;
+}
+
+/* Progress Ring Section */
+.progressCard {
+    margin-bottom: var(--space-6);
+}
+
+.progressContent {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+}
+
+.progressRing {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.progressSvg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.progressCircle {
+    transition: stroke-dasharray 1s ease-in-out;
+}
+
+.progressValue {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+}
+
+.progressNumber {
+    font-size: var(--font-size-3xl);
+    font-weight: 800;
+    color: var(--color-text-primary);
+}
+
+.progressPercent {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    font-weight: 600;
+}
+
+.progressInfo {
+    flex: 1;
+}
+
+.progressInfo h3 {
+    margin: 0 0 var(--space-2) 0;
+    font-size: var(--font-size-lg);
+}
+
+.progressInfo p {
+    color: var(--color-text-secondary);
+    margin: 0 0 var(--space-4) 0;
+}
+
+.projectBreakdown {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.projectProgress {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--font-size-sm);
+}
+
+.projectProgressItem {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding: var(--space-2) 0;
+}
+
+.projectProgressRow {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+/* Gamification Widgets */
+.gamificationBar {
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border-muted);
+}
+
+.streakBadge,
+.mentalLoadBadge {
+    display: flex;
+    align-items: center;
+    background: var(--color-bg-tertiary);
+    /* Use tertiary or subtle bg */
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--color-border);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+}
+
+.timeRemaining {
+    background: var(--color-bg-secondary);
+    padding: var(--space-2);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border-muted);
+}
+
+.projectDot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+}
+
+.projectName {
+    flex: 1;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Health status styles */
+.blocked {
+    box-shadow: 0 0 0 2px var(--color-error-subtle);
+}
+
+.at_risk {
+    box-shadow: 0 0 0 2px var(--color-warning-subtle);
+}
+
+.blockedText {
+    color: var(--color-error) !important;
+    font-weight: var(--font-weight-medium);
+}
+
+.at_riskText {
+    color: var(--color-warning) !important;
+    font-weight: var(--font-weight-medium);
+}
+
+.dashboardNextAction {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    margin-left: 16px;
+    padding: 2px 8px;
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-sm);
+    color: var(--color-accent);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.dashboardNextAction:hover {
+    background: var(--color-accent-subtle);
+}
+
+.nextActionText {
+    font-size: 10px;
+    font-weight: var(--font-weight-medium);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.projectCount {
+    color: var(--color-text-muted);
+    font-variant-numeric: tabular-nums;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 900px) {
+    .twoColumn {
+        grid-template-columns: 1fr;
+    }
+
+    .progressContent {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-6);
+    }
+
+    .projectBreakdown {
+        align-items: center;
+        width: 100%;
+    }
+
+    .projectProgress {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .welcome {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-4);
+    }
+
+    .statsGrid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,10 @@
+/* ============================================
+   MainLayout Component Styles
+   ============================================ */
+
+.main {
+    flex: 1;
+    padding: var(--space-6);
+    overflow-y: auto;
+    background: var(--color-bg-primary);
+}
